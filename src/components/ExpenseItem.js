@@ -1,12 +1,13 @@
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+function ExpenseItem(props) {
     return (
         <div className="expense-item">
-            <div>Date: 15.12.2022.</div>
+            <div>{props.date.toISOString()}</div>
             <div className="expense-item__description">
-                <h2>Title: Car Insurance</h2>
-                <div className="expense-item__price">Amount: 50$</div>
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">{props.amount}$</div>
+                {/* <div className="expense-item__price">Amount: {Math.random()}$</div> */}
             </div>
         </div>
     );
