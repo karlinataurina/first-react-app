@@ -2,39 +2,55 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 const ExpenseForm = () => {
+    /* MULTIPLE STATE CONCEPT: */
     const [enteredTitle, setEnteredTitle] = useState("");
-    const [enteredAmount, setEnteredAmount] = useState("");
-    const [enteredDate, setEnteredDate] = useState("");
+    /* we set the state for the title input field.
+    initially it's an empty string, but then we use destructuring to
+    get our 2 elements which are [currently entered title and
+    a function for updating the state] */
+    const [enteredAmount, setEnteredAmount] = useState(""); /* same here for amount */
+    const [enteredDate, setEnteredDate] = useState(""); /* same here for date */
 
-    /* const [userInput, setUserInput] = useState({
+    /* ONE STATE CONCEPT: calling useState only once & passing in an object as a value
+    const [userInput, setUserInput] = useState({
         enteredTitle: "",
         enteredAmount: "",
         enteredDate: ""
     }); */
 
     const titleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+        //console.log(event.target.value);<=with this we get each pressed key in console right away
+        setEnteredTitle(event.target.value);/* here when we react to the event where
+        the user enters something, we call the "setEnteredTitle" function & pass
+        event.target.value[which is the currently entered value] as
+        a parameter/argument to this function. This will be stored in our state. */
 
-        /* setUserInput({
+        /* FOR ONE STATE CONCEPT:
+        setUserInput({
            ...userInput,
            enteredTitle: event.target.value,
-        }); */
+        });
 
-        /* setUserInput((previousState) => {
+        UPDATING STATE THAT DEPENDS ON THE PREVIOUS STATE:
+        setUserInput((previousState) => {
                 return { ... previousState, enteredTitle: event.target.value };
-        }); // <-- use this approach if you depend on the previous state */
+        }); */
     };
 
     const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value);
-        /* setUserInput({
+        setEnteredAmount(event.target.value); /* same here */
+
+        /* FOR ONE STATE CONCEPT:
+        setUserInput({
             enteredAmount: event.target.value,
         }) */
     };
 
     const dateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
-        /* setUserInput({
+        setEnteredDate(event.target.value); /* same here */
+
+        /* FOR ONE STATE CONCEPT:
+        setUserInput({
             enteredDate: event.target.value,
         })*/
     };
