@@ -11,12 +11,13 @@ const ExpenseItem = (props) => {
 
     //let title = props.title;
 
-    const clickHandler = () => {
-        // console.log('Clicked!');
-        //title = "Updated!";
-        setTitle('Updated!!!');
-        console.log(title);
-    };
+    /* Changes the item text[title] when clicked on this button: */
+    // const clickHandler = () => {
+    //     // console.log('Clicked!');
+    //     //title = "Updated!";
+    //     setTitle('Updated!!!');
+    //     console.log(title);
+    // };
 
     return (
         <li>
@@ -27,7 +28,7 @@ const ExpenseItem = (props) => {
                     <div className="expense-item__price">{props.amount}$</div>
                     {/* <div className="expense-item__price">Amount: {Math.random()}$</div> */}
                 </div>
-                <button onClick={clickHandler}>Change Title</button>
+                {/*<button onClick={clickHandler}>Change Title</button>*/}
             </Card>
         </li>
     );
