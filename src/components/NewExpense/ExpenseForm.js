@@ -60,7 +60,7 @@ const ExpenseForm = (props) => {
 
         const expenseData = {
             title: enteredTitle,
-            amount: enteredAmount,
+            amount: +enteredAmount,
             date: new Date(enteredDate)
         };
 
@@ -88,7 +88,10 @@ const ExpenseForm = (props) => {
             </div>
         </div>
         <div className="new-expense__actions">
-            <button type="submit">Add Expense</button>
+            <button type="button" onClick={props.onCancel}>Cancel</button> {/*
+            Cancel button shows up when the form is open. When you click it, the form closes.
+            The function we receive on the onCancel prop is forwarded to the onClick prop on the Cancel button. */}
+            <button type="submit">Add Expense</button> {/* Form closes when you click the submit button */}
         </div>
     </form>
     );
