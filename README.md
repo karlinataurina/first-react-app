@@ -1,3 +1,5 @@
+# This is an Expenses Tracker app [named first-react-app because this was my first react app]
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
